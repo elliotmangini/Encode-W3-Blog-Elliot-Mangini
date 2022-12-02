@@ -7,7 +7,7 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules"],
-  "include": ["./scripts", "./test", "./src", "./typechain-types"],
+  // "exclude": ["node_modules"],
+  "include": ["./scripts", "./tests", "./src", "./typechain-types"],
   "files": ["./hardhat.config.ts"],
 }

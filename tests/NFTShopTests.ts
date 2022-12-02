@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
-import { 
+import {
   MyERC20Token,
   MyERC20Token__factory,
   MyERC721Token,
