@@ -46,6 +46,9 @@ describe("NFT Shop", async () => {
       TEST_RATIO, 
       paymentTokenContract.address);
     await tokenSaleContract.deployed();
+      const MINTER_ROLE = await paymentTokenContract.MINTER_ROLE();
+      const roleTX = await paymentTokenContract.grantRole(MINTER_ROLE, paymentTokenContract.address);
+    await roleTX.wait();
   });
 
 
@@ -68,7 +71,14 @@ describe("NFT Shop", async () => {
   });
 
   describe("When a user purchase an ERC20 from the Token contract", async () => {
-    beforeEach(async () => {});
+    beforeEach(async () => {
+      // passing overrides to buyTokens, in this case a value.
+      const buyValue = ethers.utils.parseEther("1");
+      const tx = await tokenSaleContract
+        .connect(accounts[1])
+        .buyTokens({ value: buyValue });
+      await tx.wait();
+    });
 
     it("charges the correct amount of ETH", async () => {
       throw new Error("Not implemented");
