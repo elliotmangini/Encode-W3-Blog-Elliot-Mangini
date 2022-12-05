@@ -25,8 +25,9 @@ contract TokenSale is Ownable {
     IMyERC721Token public ballotTokenContract;
     uint256 public withdrawableAmount;
 
-    constructor(uint256 _ratio, uint256 _price, address _paymentToken, address _ballotTokenContract) {
+    constructor(uint256 _ratio, uint256 _price, address _paymentToken) {
         ratio = _ratio;
+        price = _price;
         paymentToken = IMyERC20Token(_paymentToken);
     }
 
@@ -48,7 +49,7 @@ contract TokenSale is Ownable {
         withdrawableAmount += price / 2;
     }
 
-    function withdraw(uint256 amount) external onlyOwner {
+    function withdraw(uint256 amount, address owner) external onlyOwner {
         withdrawableAmount -= amount;
         paymentToken.transfer(owner, amount);
     }
