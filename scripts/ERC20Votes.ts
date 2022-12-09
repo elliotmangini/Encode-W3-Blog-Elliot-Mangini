@@ -49,7 +49,7 @@ async function main() {
     // Check past voting power
     const lastBlock = await ethers.provider.getBlock("latest");
     console.log(`Current block number is ${lastBlock.number}`);
-    const pastVotes = await voteContract.getPastVotes(accounts[1].address, lastBlock.number = 1);
+    const pastVotes = await voteContract.getPastVotes(accounts[1].address, lastBlock.number - 1);
     console.log(`Account 1: ${accounts[1].address} has ${pastVotes.toString()} units of voting power from the previous block.`)
 }
 
