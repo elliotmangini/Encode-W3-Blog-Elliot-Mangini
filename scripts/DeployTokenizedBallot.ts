@@ -38,8 +38,8 @@ async function main () {
     )
     await tokenizedBallotContract.deployed();
     console.log(`Depployed TokenizedBallot contract at ${tokenizedBallotContract.address}`);
-    // deployed at: 0xAf37F6a774D15855B6D9215fC0883abc30CD3AE7
-    // tx: 0xaf4e76996dd0f1548c27d010507a309eb715a6b493a9ef8d8f38a0d7f9ba9585
+    // deployed at: 0xbAEcf158322F07186Ed42C5a752A29bf62192680
+    // tx: 0x1eea616074a5bf01ad228b77ba21dc931a9e3a3fb8da4f210cefbfe5213e7313
 }
 
 main().catch((error) => {
